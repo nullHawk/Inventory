@@ -6,21 +6,22 @@ import java.util.Date;
 import com.nullhawk.inventory.enums.TransactionType;
 import com.nullhawk.inventory.enums.UserType;
 import com.nullhawk.inventory.exceptions.UnauthorizedAccessExcpetion;
-
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Transaction {
     private long id;
+    @OneToOne
     private Item item;
     private TransactionType transactionType;
-    private int quantity;
+    private int amount;
     private Date date;
     
     public Transaction(long id, Item item, TransactionType transactionType, int quantity, Date date){
         this.item = item;
         this.transactionType = transactionType;
-        this.quantity = quantity;
+        this.amount = quantity;
         this.date = date;
     }
     public long getId() {
@@ -51,13 +52,13 @@ public class Transaction {
         }
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getAmount() {
+        return amount;
     }
 
     public void setQuantity(User user, int quantity)throws UnauthorizedAccessExcpetion {
         if(user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.MANAGER){
-            this.quantity = quantity;
+            this.amount = quantity;
         }else{
             throw new UnauthorizedAccessExcpetion("Not authorized to change item name");
         }

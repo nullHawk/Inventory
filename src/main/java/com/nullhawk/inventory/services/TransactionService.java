@@ -33,7 +33,7 @@ public class TransactionService {
         Transaction transaction = getTransaction(id);
         transaction.setTransactionId(transactionDetails.getTransactionId());
         transaction.setTransactionType(transactionDetails.getTransactionType());
-        transaction.setQuantity(transactionDetails.getQuantity());
+        transaction.setQuantity(transactionDetails.getAmount());
         transaction.setTransactionDate(transactionDetails.getTransactionDate());
         return transactionRepository.save(transaction);
     }
