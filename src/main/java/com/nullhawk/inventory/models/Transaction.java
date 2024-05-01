@@ -1,7 +1,11 @@
 package com.nullhawk.inventory.models;
 
-import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.Date;
+@Getter
+@Setter
 public class Transaction {
 
     private Long transactionId;
@@ -9,7 +13,7 @@ public class Transaction {
 
     private Item item;
 
-    private String transactionType; // incoming or outgoing
+    private TransactionType transactionType; // incoming or outgoing
     private Integer quantity;
     private Date transactionDate;
 

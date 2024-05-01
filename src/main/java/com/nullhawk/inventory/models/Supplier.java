@@ -10,7 +10,7 @@ public class Supplier {
     private Long supplierId;
 
     private String name;
-    private String contactInformation;
+    private ContactInfo contactInformation;
     private String description;
 
 
