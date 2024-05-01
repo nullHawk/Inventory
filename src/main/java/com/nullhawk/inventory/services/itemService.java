@@ -3,7 +3,6 @@ package com.nullhawk.inventory.services;
 import com.nullhawk.inventory.exceptions.ItemNotFoundException;
 import com.nullhawk.inventory.models.Item;
 import com.nullhawk.inventory.repositories.ItemRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,28 +17,28 @@ public class itemService {
         this.itemRepository = itemRepository;
     }
 //
-//    public List<Item> getAllItems() {
-//        return itemRepository.findAll();
-//    }
+    public List<Item> getAllItems() {
+        return itemRepository.findAll();
+    }
 //
-//    public Item getItem(Long id) {
-//        return itemRepository.findById(id).orElseThrow(() -> new ItemNotFoundException("Item not found"));
-//    }
+    public Item getItem(Long id) {
+        return itemRepository.findById(id).orElseThrow(() -> new ItemNotFoundException("Item not found"));
+    }
 //
-//    public Item createItem(Item item) {
-//        return itemRepository.save(item);
-//    }
-//
-//    public Item updateItem(Long id, Item itemDetails) {
-//        Item item = getItem(id);
-//        item.setName(itemDetails.getName());
-//        item.setQuantity(itemDetails.getQuantity());
-//        item.setPrice(itemDetails.getPrice());
-//        return itemRepository.save(item);
-//    }
-//
-//    public void deleteItem(Long id) {
-//        Item item = getItem(id);
-//        itemRepository.delete(item);
-//    }
+    public Item createItem(Item item) {
+        return itemRepository.save(item);
+    }
+
+    public Item updateItem(Long id, Item itemDetails) {
+        Item item = getItem(id);
+        item.setName(itemDetails.getName());
+        item.setQuantity(itemDetails.getQuantity());
+        item.setPrice(itemDetails.getPrice());
+        return itemRepository.save(item);
+    }
+
+    public void deleteItem(Long id) {
+        Item item = getItem(id);
+        itemRepository.delete(item);
+    }
 }

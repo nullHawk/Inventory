@@ -1,5 +1,6 @@
 package com.nullhawk.inventory.models;
 
+
 import java.util.Date;
 
 import com.nullhawk.inventory.enums.TransactionType;
