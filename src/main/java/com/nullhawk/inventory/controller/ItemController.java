@@ -1,5 +1,6 @@
 package com.nullhawk.inventory.controller;
 
+import com.nullhawk.inventory.services.ItemService;
 import com.nullhawk.inventory.services.ItemServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,21 +14,22 @@ import com.nullhawk.inventory.dtos.ItemDto;
 import com.nullhawk.inventory.exceptions.UnauthorizedAccessExcpetion;
 import com.nullhawk.inventory.models.*;
 
-@Controller
+@RestController
 @RequestMapping("/item")
 public class ItemController {
 
-    @Autowired
-    private ItemServiceImp service;
 
-    public ItemController(ItemServiceImp service) {
+    private ItemService service;
+
+    public ItemController(ItemService service) {
         this.service = service;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public List<ItemDto> getAllItems() {
         List<Item> items = this.service.getAllItems();
         List<ItemDto> itemDtos = convertToItemDtos(items);
+        System.out.println("Get All items Called");
         return itemDtos;
     }
 
@@ -79,7 +81,7 @@ public class ItemController {
     }
 
     private Item convertToItem(ItemDto itemDto) {
-        Item item = new Item(itemDto.getName(), itemDto.getQuantity(), itemDto.getPrice(), itemDto.getSupplier());
+        Item item = new Item();
         item.setName(itemDto.getName());
         item.setPrice(itemDto.getPrice());
         item.setQuantity(itemDto.getQuantity());

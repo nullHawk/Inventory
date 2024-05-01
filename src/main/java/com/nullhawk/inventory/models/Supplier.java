@@ -1,11 +1,10 @@
 package com.nullhawk.inventory.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Collection;
 
 @Getter
 @Setter
@@ -15,14 +14,13 @@ public class Supplier {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
+    @ManyToOne
+    @JoinColumn()
     private ContactInfo contactInfo;
+    @ManyToOne
+    @JoinColumn()
     private SupplierDescription description;
 
-    public Supplier(String name, ContactInfo contactInfo, SupplierDescription description){
-        this.name = name;
-        this.contactInfo = contactInfo;
-        this.description = description;
-    }
 
     // public long getId() {
     //     return id;

@@ -5,6 +5,7 @@ import com.nullhawk.inventory.dtos.SupplierDto;
 import com.nullhawk.inventory.exceptions.UnauthorizedAccessExcpetion;
 import com.nullhawk.inventory.models.Item;
 import com.nullhawk.inventory.models.Supplier;
+import com.nullhawk.inventory.services.SupplierService;
 import com.nullhawk.inventory.services.SupplierServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,13 +17,13 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/supplier")
 public class SupplierController {
     @Autowired
-    private SupplierServiceImp service;
+    private SupplierService service;
 
-    public SupplierController(SupplierServiceImp service) {
+    public SupplierController(SupplierService service) {
         this.service = service;
     }
 
@@ -98,7 +99,7 @@ public class SupplierController {
     }
 
     private Supplier convertToSupplier(SupplierDto supplierDto) {
-        Supplier supplier = new Supplier(supplierDto.getName(), supplierDto.getContactInfo(), supplierDto.getDescription());
+        Supplier supplier = new Supplier();
         supplier.setName(supplierDto.getName());
         supplier.setContactInfo(supplierDto.getContactInfo());
         supplier.setDescription(supplierDto.getDescription());

@@ -13,7 +13,7 @@ import com.nullhawk.inventory.models.*;
 import java.util.List;
 import java.util.ArrayList;
 
-@Controller
+@RestController
 @RequestMapping("/transaction")
 public class TransactionController {
     @Autowired
@@ -78,7 +78,7 @@ public class TransactionController {
    }
 
    private Transaction convertToTransaction(TransactionDto transactionDto) {
-    Transaction transaction = new Transaction(transactionDto.getItem(), transactionDto.getTransactionType(), transactionDto.getAmount(),transactionDto.getDate());
+    Transaction transaction = new Transaction();
     transaction.setId(transactionDto.getId());
     transaction.setItem(transactionDto.getItem());
     transaction.setTransactionType(transactionDto.getTransactionType());
