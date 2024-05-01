@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 
 
 @Entity
@@ -17,6 +18,7 @@ public class Item {
     private String name;
     private int quantity;
     private double price;
+    @ManyToMany
     private Supplier supplier;
 
     public Item(String name, int quantity, double price, Supplier supplier){

@@ -1,7 +1,6 @@
 package com.nullhawk.inventory.services;
 
 import com.nullhawk.inventory.models.Transaction;
-
 import java.util.List;
 
 public interface TransactionService {
