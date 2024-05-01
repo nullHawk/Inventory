@@ -1,5 +1,7 @@
 package com.nullhawk.inventory.models;
 
+import com.nullhawk.inventory.enums.UserType;
+
 import jakarta.persistence.Entity;
 
 @Entity

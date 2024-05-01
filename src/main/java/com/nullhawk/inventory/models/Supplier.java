@@ -1,6 +1,7 @@
 package com.nullhawk.inventory.models;
 
 
+import com.nullhawk.inventory.enums.UserType;
 import com.nullhawk.inventory.exceptions.UnauthorizedAccessExcpetion;
 
 import jakarta.persistence.Entity;

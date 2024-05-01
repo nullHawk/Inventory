@@ -2,6 +2,8 @@ package com.nullhawk.inventory.models;
 
 import java.util.Date;
 
+import com.nullhawk.inventory.enums.TransactionType;
+import com.nullhawk.inventory.enums.UserType;
 import com.nullhawk.inventory.exceptions.UnauthorizedAccessExcpetion;
 
 import jakarta.persistence.Entity;

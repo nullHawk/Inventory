@@ -1,4 +1,4 @@
-package com.nullhawk.inventory.models;
+package com.nullhawk.inventory.enums;
 
 public enum TransactionType {
     ADDITION,
