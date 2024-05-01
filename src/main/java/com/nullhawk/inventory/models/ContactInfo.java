@@ -1,12 +1,15 @@
 package com.nullhawk.inventory.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-@Entity
+//@Entity
 public class ContactInfo {
     private String firstName;
     private String lastName;

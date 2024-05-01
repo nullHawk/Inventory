@@ -1,45 +1,15 @@
 package com.nullhawk.inventory.services;
 
-import com.nullhawk.inventory.exceptions.TransactionException;
-import com.nullhawk.inventory.models.Transaction;
-import com.nullhawk.inventory.repositories.TransactionRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
+import com.nullhawk.inventory.enums.UserType;
+import com.nullhawk.inventory.exceptions.UnauthorizedAccessExcpetion;
+import com.nullhawk.inventory.models.Transaction;
 import java.util.List;
 
-@Service
-public class TransactionService {
-    @Autowired
-    private TransactionRepository transactionRepository;
-
-    public TransactionService(TransactionRepository transactionRepository) {
-        this.transactionRepository = transactionRepository;
-    }
-
-    public List<Transaction> getAllTransactions() {
-        return transactionRepository.findAll();
-    }
-
-    public Transaction getTransaction(Long id) {
-        return transactionRepository.findById(id).orElseThrow(() -> new TransactionException("Transaction not found"));
-    }
-
-    public Transaction createTransaction(Transaction transaction) {
-        return transactionRepository.save(transaction);
-    }
-
-    public Transaction updateTransaction(Long id, Transaction transactionDetails) {
-        Transaction transaction = getTransaction(id);
-        transaction.setTransactionId(transactionDetails.getTransactionId());
-        transaction.setTransactionType(transactionDetails.getTransactionType());
-        transaction.setQuantity(transactionDetails.getQuantity());
-        transaction.setTransactionDate(transactionDetails.getTransactionDate());
-        return transactionRepository.save(transaction);
-    }
-
-    public void deleteTransaction(Long id) {
-        Transaction transaction = getTransaction(id);
-        transactionRepository.delete(transaction);
-    }
+public interface TransactionService {
+    public List<Transaction> getAllTransactions();
+    public Transaction getTransaction(Long id);
+    public Transaction createTransaction(UserType user, Transaction transaction) throws UnauthorizedAccessExcpetion;
+    public Transaction updateTransaction(UserType user, Long id, Transaction transactionDetails) throws UnauthorizedAccessExcpetion;
+    public void deleteTransaction(UserType user, Long id)throws UnauthorizedAccessExcpetion;
 }
