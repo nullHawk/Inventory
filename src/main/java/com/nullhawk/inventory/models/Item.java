@@ -1,23 +1,79 @@
 package com.nullhawk.inventory.models;
 
+import com.nullhawk.inventory.exceptions.UnauthorizedAccessExcpetion;
+
 import jakarta.persistence.Entity;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-
-import java.util.Set;
-
-@Getter
-@Setter
+@Entity
 public class Item {
-    private Long itemId;
-
+    @Id 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private String name;
-    private Integer quantity;
-    private Double price;
+    private int quantity;
+    private double price;
+    private Supplier supplier;
 
+    public Item(int id, String name, int quantity, double price, Supplier supplier){
+        this.id = 0;
+        this.name = name;
+        this.quantity = 0;
+        this.price = 0.0;
+        this.supplier = this.supplier;
+    }
 
+    public long getId() {
+        return id;
+    }
 
+    public String getName() {
+        return name;
+    }
 
-    // Getters and setters
+    public void setName(User user, String name) throws UnauthorizedAccessExcpetion {
+        if(user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.MANAGER){
+            this.name = name;
+        }else{
+            throw new UnauthorizedAccessExcpetion("Not authorized to change item name");
+        }
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(User user, int quantity) throws UnauthorizedAccessExcpetion {
+        if(user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.MANAGER){
+            this.quantity = quantity;
+        }else{
+            throw new UnauthorizedAccessExcpetion("Not authorized to change item name");
+        }
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(User user, double price) throws UnauthorizedAccessExcpetion {
+        if(user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.MANAGER){
+            this.price = price;
+        }else{
+            throw new UnauthorizedAccessExcpetion("Not authorized to change item name");
+        }
+    }
+
+    public Supplier getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(User user, Supplier supplier) throws UnauthorizedAccessExcpetion {
+        if(user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.MANAGER){
+            this.supplier = supplier;
+        }else{
+            throw new UnauthorizedAccessExcpetion("Not authorized to change item name");
+        }
+    }
 }

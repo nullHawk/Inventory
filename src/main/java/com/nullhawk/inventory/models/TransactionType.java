@@ -1,5 +1,10 @@
 package com.nullhawk.inventory.models;
 
 public enum TransactionType {
-    IN, OUT
+    ADDITION,
+    REMOVAL,
+    TRANSFER,
+    UPDATE,
+    ADJUSTMENT,
+    RETURN
 }
