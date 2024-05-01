@@ -1,7 +1,7 @@
 package com.nullhawk.inventory.repositories;
 
-import org.springframework.stereotype.Repository;
+import com.nullhawk.inventory.models.Transaction;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public class TransactionRepository {
+public interface TransactionRepository extends JpaRepository<Transaction, Long> {
 }
