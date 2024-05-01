@@ -1,6 +1,6 @@
 package com.nullhawk.inventory.controller;
 
-import com.nullhawk.inventory.services.itemServiceImp;
+import com.nullhawk.inventory.services.ItemServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 public class ItemController {
 
     @Autowired
-    private itemServiceImp service;
+    private ItemServiceImp service;
 
-    public ItemController(itemServiceImp service) {
+    public ItemController(ItemServiceImp service) {
         this.service = service;
     }
 

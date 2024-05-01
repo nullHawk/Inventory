@@ -8,8 +8,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+import lombok.Getter;
+import lombok.Setter;
 
-
+@Setter
+@Getter
 @Entity
 public class Item {
     @Id 
@@ -28,55 +31,55 @@ public class Item {
         this.supplier = supplier;
     }
 
-    public long getId() {
-        return id;
-    }
+    // public long getId() {
+    //     return id;
+    // }
 
-    public String getName() {
-        return name;
-    }
+    // public String getName() {
+    //     return name;
+    // }
 
-    public void setName(User user, String name) throws UnauthorizedAccessExcpetion {
-        if(user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.MANAGER){
-            this.name = name;
-        }else{
-            throw new UnauthorizedAccessExcpetion("Not authorized to change item name");
-        }
-    }
+    // public void setName(User user, String name) throws UnauthorizedAccessExcpetion {
+    //     if(user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.MANAGER){
+    //         this.name = name;
+    //     }else{
+    //         throw new UnauthorizedAccessExcpetion("Not authorized to change item name");
+    //     }
+    // }
 
-    public int getQuantity() {
-        return quantity;
-    }
+    // public int getQuantity() {
+    //     return quantity;
+    // }
 
-    public void setQuantity(User user, int quantity) throws UnauthorizedAccessExcpetion {
-        if(user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.MANAGER){
-            this.quantity = quantity;
-        }else{
-            throw new UnauthorizedAccessExcpetion("Not authorized to change item name");
-        }
-    }
+    // public void setQuantity(User user, int quantity) throws UnauthorizedAccessExcpetion {
+    //     if(user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.MANAGER){
+    //         this.quantity = quantity;
+    //     }else{
+    //         throw new UnauthorizedAccessExcpetion("Not authorized to change item name");
+    //     }
+    // }
 
-    public double getPrice() {
-        return price;
-    }
+    // public double getPrice() {
+    //     return price;
+    // }
 
-    public void setPrice(User user, double price) throws UnauthorizedAccessExcpetion {
-        if(user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.MANAGER){
-            this.price = price;
-        }else{
-            throw new UnauthorizedAccessExcpetion("Not authorized to change item name");
-        }
-    }
+    // public void setPrice(User user, double price) throws UnauthorizedAccessExcpetion {
+    //     if(user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.MANAGER){
+    //         this.price = price;
+    //     }else{
+    //         throw new UnauthorizedAccessExcpetion("Not authorized to change item name");
+    //     }
+    // }
 
-    public Supplier getSupplier() {
-        return supplier;
-    }
+    // public Supplier getSupplier() {
+    //     return supplier;
+    // }
 
-    public void setSupplier(User user, Supplier supplier) throws UnauthorizedAccessExcpetion {
-        if(user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.MANAGER){
-            this.supplier = supplier;
-        }else{
-            throw new UnauthorizedAccessExcpetion("Not authorized to change item name");
-        }
-    }
+    // public void setSupplier(User user, Supplier supplier) throws UnauthorizedAccessExcpetion {
+    //     if(user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.MANAGER){
+    //         this.supplier = supplier;
+    //     }else{
+    //         throw new UnauthorizedAccessExcpetion("Not authorized to change item name");
+    //     }
+    // }
 }
