@@ -1,20 +1,17 @@
 package com.nullhawk.inventory.controller;
 
-import com.nullhawk.inventory.models.Supplier;
-import com.nullhawk.inventory.services.SupplierService;
+import com.nullhawk.inventory.services.SupplierServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Controller
 @RequestMapping("/supplier")
 public class SupplierController {
     @Autowired
-    private SupplierService service;
+    private SupplierServiceImp service;
 
-    public SupplierController(SupplierService service) {
+    public SupplierController(SupplierServiceImp service) {
         this.service = service;
     }
 

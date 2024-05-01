@@ -1,20 +1,17 @@
 package com.nullhawk.inventory.controller;
 
-import com.nullhawk.inventory.models.Transaction;
-import com.nullhawk.inventory.services.TransactionService;
+import com.nullhawk.inventory.services.TransactionServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Controller
 @RequestMapping("/transaction")
 public class TransactionController {
     @Autowired
-    private TransactionService service;
+    private TransactionServiceImp service;
 
-    public TransactionController(TransactionService service) {
+    public TransactionController(TransactionServiceImp service) {
         this.service = service;
     }
 
