@@ -1,25 +1,77 @@
 package com.nullhawk.inventory.models;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.Date;
-@Getter
-@Setter
+
+import com.nullhawk.inventory.enums.TransactionType;
+import com.nullhawk.inventory.enums.UserType;
+import com.nullhawk.inventory.exceptions.UnauthorizedAccessExcpetion;
+
+import jakarta.persistence.Entity;
+
+@Entity
 public class Transaction {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long transactionId;
-
-
+    private long id;
     private Item item;
+    private TransactionType transactionType;
+    private int quantity;
+    private Date date;
+    
+    public Transaction(long id, Item item, TransactionType transactionType, int quantity, Date date){
+        this.item = item;
+        this.transactionType = transactionType;
+        this.quantity = quantity;
+        this.date = date;
+    }
+    public long getId() {
+        return id;
+    }
 
-    private TransactionType transactionType; // incoming or outgoing
-    private Integer quantity;
-    private Date transactionDate;
+    public Item getItem() {
+        return item;
+    }
 
-    // Getters and setters
+    public void setItem(User user, Item item)throws UnauthorizedAccessExcpetion{
+        if(user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.MANAGER){
+            this.item = item;
+        }else{
+            throw new UnauthorizedAccessExcpetion("Not authorized to change item name");
+        }
+    }
+
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    public void setTransactionType(User user, TransactionType transactionType)throws UnauthorizedAccessExcpetion {
+        if(user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.MANAGER){
+            this.transactionType = transactionType;
+        }else{
+            throw new UnauthorizedAccessExcpetion("Not authorized to change item name");
+        }
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(User user, int quantity)throws UnauthorizedAccessExcpetion {
+        if(user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.MANAGER){
+            this.quantity = quantity;
+        }else{
+            throw new UnauthorizedAccessExcpetion("Not authorized to change item name");
+        }
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(User user, Date date) throws UnauthorizedAccessExcpetion {
+        if(user.getUserType() == UserType.ADMIN || user.getUserType() == UserType.MANAGER){
+            this.date = date;
+        }else{
+            throw new UnauthorizedAccessExcpetion("Not authorized to change item name");
+        }
+    }
 }
