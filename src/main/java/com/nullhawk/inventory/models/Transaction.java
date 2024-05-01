@@ -15,7 +15,6 @@ public class Transaction {
     private Date date;
     
     public Transaction(long id, Item item, TransactionType transactionType, int quantity, Date date){
-        this.id = id;
         this.item = item;
         this.transactionType = transactionType;
         this.quantity = quantity;

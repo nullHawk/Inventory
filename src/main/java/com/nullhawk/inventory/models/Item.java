@@ -17,12 +17,11 @@ public class Item {
     private double price;
     private Supplier supplier;
 
-    public Item(int id, String name, int quantity, double price, Supplier supplier){
-        this.id = 0;
+    public Item(String name, int quantity, double price, Supplier supplier){
         this.name = name;
-        this.quantity = 0;
-        this.price = 0.0;
-        this.supplier = this.supplier;
+        this.quantity = quantity;
+        this.price = price;
+        this.supplier = supplier;
     }
 
     public long getId() {

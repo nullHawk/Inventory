@@ -18,7 +18,6 @@ public class Supplier {
     private SupplierDescription description;
 
     public Supplier(String name, ContactInfo contactInfo, SupplierDescription description){
-        this.id = 0;
         this.name = name;
         this.contactInfo = contactInfo;
         this.description = description;
