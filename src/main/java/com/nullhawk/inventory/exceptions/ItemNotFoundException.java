@@ -1,4 +1,4 @@
-package com.nullhawk.inventory.Exceptions;
+package com.nullhawk.inventory.exceptions;
 
 public class ItemNotFoundException extends RuntimeException {
     public ItemNotFoundException(String message) {

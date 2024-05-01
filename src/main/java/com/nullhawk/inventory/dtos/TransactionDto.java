@@ -1,4 +1,4 @@
-package com.nullhawk.inventory.Dtos;
+package com.nullhawk.inventory.dtos;
 
 import java.util.Date;
 

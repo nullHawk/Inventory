@@ -1,4 +1,4 @@
-package com.nullhawk.inventory.Dtos;
+package com.nullhawk.inventory.dtos;
 
 public class SupplierDto {
     private Long id;

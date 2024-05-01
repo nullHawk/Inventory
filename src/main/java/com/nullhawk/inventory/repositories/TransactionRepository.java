@@ -1,4 +1,4 @@
-package com.nullhawk.inventory.Repositories;
+package com.nullhawk.inventory.repositories;
 
 import org.springframework.stereotype.Repository;
 

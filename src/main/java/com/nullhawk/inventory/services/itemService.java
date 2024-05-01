@@ -1,8 +1,9 @@
 package com.nullhawk.inventory.services;
 
-import com.nullhawk.inventory.Exceptions.ItemNotFoundException;
-import com.nullhawk.inventory.Repositories.ItemRepository;
+import com.nullhawk.inventory.exceptions.ItemNotFoundException;
 import com.nullhawk.inventory.models.Item;
+import com.nullhawk.inventory.repositories.ItemRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

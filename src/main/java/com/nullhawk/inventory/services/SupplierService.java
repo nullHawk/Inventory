@@ -1,8 +1,9 @@
 package com.nullhawk.inventory.services;
 
-import com.nullhawk.inventory.Exceptions.SupplierNotFoundException;
-import com.nullhawk.inventory.Repositories.SupplierRepository;
+import com.nullhawk.inventory.exceptions.SupplierNotFoundException;
 import com.nullhawk.inventory.models.Supplier;
+import com.nullhawk.inventory.repositories.SupplierRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
