@@ -20,7 +20,7 @@ public class Transaction {
     private int amount;
     private Date date;
     
-    public Transaction(long id, Item item, TransactionType transactionType, int amount, Date date){
+    public Transaction(Item item, TransactionType transactionType, int amount, Date date){
         this.item = item;
         this.transactionType = transactionType;
         this.amount = amount;

@@ -1,41 +1,19 @@
 package com.nullhawk.inventory.dtos;
 
+import com.nullhawk.inventory.enums.UserType;
+import com.nullhawk.inventory.models.ContactInfo;
+import com.nullhawk.inventory.models.SupplierDescription;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class SupplierDto {
-    private Long id;
+    private long id;
     private String name;
-    private String contactInformation;
-    private String description;
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getContactInformation() {
-        return contactInformation;
-    }
-
-    public void setContactInformation(String contactInformation) {
-        this.contactInformation = contactInformation;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    private ContactInfo contactInfo;
+    private SupplierDescription description;
+    private UserType user;
+    private ErrorDto error;
 }

@@ -5,8 +5,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
+import java.util.List;
 
 @Setter
 @Getter
@@ -20,6 +22,8 @@ public class Item {
     private double price;
     @ManyToMany
     private Supplier supplier;
+    @OneToMany
+    private List<Transaction> transactions;
 
     public Item(String name, int quantity, double price, Supplier supplier){
         this.name = name;
