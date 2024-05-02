@@ -2,16 +2,20 @@ package com.nullhawk.inventory.models;
 
 import com.nullhawk.inventory.enums.UserType;
 
-import jakarta.persistence.Entity;
-
-@Entity
 public class User {
+    private Long id;
+
     private UserType userType;
     private String username;
-    public User(UserType userType, String username){
-        this.userType = userType;
-        this.username = username;
+
+    public Long getId() {
+        return id;
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public UserType getUserType() {
         return this.userType;
     }
@@ -19,5 +23,4 @@ public class User {
     public String getUsename(){
         return this.username;
     }
-
 }

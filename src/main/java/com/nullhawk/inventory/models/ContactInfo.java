@@ -1,5 +1,6 @@
 package com.nullhawk.inventory.models;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
@@ -11,15 +12,20 @@ import lombok.Setter;
 @Setter
 //@Entity
 public class ContactInfo {
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String phone;
+    // @Id
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // @Column(name = "id", nullable = false)
+    // private Long id;
 
-    public ContactInfo(String firstName, String lastName, String email, String phone){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phone = phone;
-    }
+    // @Column(name = "first_name")
+    // private String firstName;
+
+    // @Column(name = "last_name")
+    // private String lastName;
+
+    // @Column(name = "email")
+    // private String email;
+
+    // @Column(name = "phone")
+    // private String phone;
 }
