@@ -1,9 +1,8 @@
 package com.nullhawk.inventory.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import java.util.List;
+
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,18 +10,24 @@ import lombok.Setter;
 @Setter
 @Entity
 public class Supplier {
-    @Id 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
-    private ContactInfo contactInfo;
-    private SupplierDescription description;
+    private String contactInfo;
+    private String description;
 
-    public Supplier(String name, ContactInfo contactInfo, SupplierDescription description){
-        this.name = name;
-        this.contactInfo = contactInfo;
-        this.description = description;
-    }
+    // TODO: remove comments
+    // @OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL)
+    // private List<Item> items;
+
+    // @ManyToOne
+    // @JoinColumn()
+    // private ContactInfo contactInfo;
+    // @ManyToOne
+    // @JoinColumn()
+    // private SupplierDescription description;
+
 
     // public long getId() {
     //     return id;
