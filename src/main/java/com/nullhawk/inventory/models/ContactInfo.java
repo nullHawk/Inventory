@@ -1,9 +1,16 @@
 package com.nullhawk.inventory.models;
 
-// @Getter
-// @Setter
-// @Entity
-// @Table(name = "contact_info")
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+//@Entity
 public class ContactInfo {
     // @Id
     // @GeneratedValue(strategy = GenerationType.IDENTITY)
