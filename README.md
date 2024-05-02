@@ -8,6 +8,9 @@ This project aims to develop a robust Inventory Management System using Spring B
 - *Supplier Management*: Ability to add, update, and delete suppliers, along with listing all items provided by a specific supplier.
 - *Transaction Management*: Recording transactions related to inventory items, managing stock levels, and listing all transactions for a specific item.
 
+## Class Diagram
+![InventoryClassDiagram](https://github.com/nullHawk/Inventory/assets/140995666/2f998ed4-9410-4e6b-bfa1-f4c4c4af84ba)
+
 ## Models
 1. *Item*: Represents an inventory item with fields such as Item ID, name, quantity, supplier, and price.
 2. *Supplier*: Represents a supplier with fields like supplier ID, name, contact information, and description.
@@ -65,5 +68,3 @@ For any inquiries or support, please contact [nullhawk](suryanshsinghshakya1@gma
 
 This documentation provides an overview of the Inventory Management System, including its features, implementation details, setup instructions, API endpoints, contributors, license, and contact information. For detailed technical documentation, please refer to the project's source code and comments.
 
-
-![InventoryClassDiagram](https://github.com/nullHawk/Inventory/assets/140995666/2f998ed4-9410-4e6b-bfa1-f4c4c4af84ba)
