@@ -4,7 +4,6 @@ import com.nullhawk.inventory.services.TransactionServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import com.nullhawk.inventory.dtos.TransactionDto;
@@ -80,7 +79,7 @@ public class TransactionController {
    private Transaction convertToTransaction(TransactionDto transactionDto) {
     Transaction transaction = new Transaction();
     transaction.setId(transactionDto.getId());
-    transaction.setItem(transactionDto.getItem());
+    // transaction.setItem(transactionDto.getItem());
     transaction.setTransactionType(transactionDto.getTransactionType());
     transaction.setAmount(transactionDto.getAmount());
     transaction.setDate(transactionDto.getDate());
@@ -90,7 +89,7 @@ public class TransactionController {
 private TransactionDto convertToTransactionDto(Transaction transaction) {
     TransactionDto transactionDto = new TransactionDto();
     transactionDto.setId(transaction.getId());
-    transactionDto.setItem(transaction.getItem());
+    // transactionDto.setItem(transaction.getItem());
     transactionDto.setTransactionType(transaction.getTransactionType());
     transactionDto.setAmount(transaction.getAmount());
     transactionDto.setDate(transaction.getDate());

@@ -1,25 +1,32 @@
 package com.nullhawk.inventory.models;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.Collection;
 
 @Getter
 @Setter
 @Entity
 public class Supplier {
-    @Id 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
-    @ManyToOne
-    @JoinColumn()
-    private ContactInfo contactInfo;
-    @ManyToOne
-    @JoinColumn()
-    private SupplierDescription description;
+    private String contactInfo;
+    private String description;
+
+    // TODO: remove comments
+    // @OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL)
+    // private List<Item> items;
+
+    // @ManyToOne
+    // @JoinColumn()
+    // private ContactInfo contactInfo;
+    // @ManyToOne
+    // @JoinColumn()
+    // private SupplierDescription description;
 
 
     // public long getId() {

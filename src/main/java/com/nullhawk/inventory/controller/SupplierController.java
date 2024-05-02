@@ -1,16 +1,12 @@
 package com.nullhawk.inventory.controller;
 
-import com.nullhawk.inventory.dtos.ItemDto;
 import com.nullhawk.inventory.dtos.SupplierDto;
 import com.nullhawk.inventory.exceptions.UnauthorizedAccessExcpetion;
-import com.nullhawk.inventory.models.Item;
 import com.nullhawk.inventory.models.Supplier;
 import com.nullhawk.inventory.services.SupplierService;
-import com.nullhawk.inventory.services.SupplierServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 

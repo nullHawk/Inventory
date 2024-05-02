@@ -2,13 +2,7 @@ package com.nullhawk.inventory.models;
 
 import com.nullhawk.inventory.enums.UserType;
 
-import jakarta.persistence.*;
-
-@Entity
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
     private Long id;
 
     private UserType userType;
@@ -29,5 +23,4 @@ public class User {
     public String getUsename(){
         return this.username;
     }
-
 }

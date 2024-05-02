@@ -1,11 +1,8 @@
 package com.nullhawk.inventory.controller;
 
 import com.nullhawk.inventory.services.ItemService;
-import com.nullhawk.inventory.services.ItemServiceImp;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import java.util.ArrayList;
@@ -25,7 +22,7 @@ public class ItemController {
         this.service = service;
     }
 
-    @GetMapping
+    @GetMapping("/")
     public List<ItemDto> getAllItems() {
         List<Item> items = this.service.getAllItems();
         List<ItemDto> itemDtos = convertToItemDtos(items);

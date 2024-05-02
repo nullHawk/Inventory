@@ -4,7 +4,7 @@ import java.util.Date;
 
 import com.nullhawk.inventory.enums.TransactionType;
 import com.nullhawk.inventory.enums.UserType;
-import com.nullhawk.inventory.models.Item;
+// import com.nullhawk.inventory.models.Item;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 public class TransactionDto {
     private long id;
-    private Item item;
+    // private Item item;
     private TransactionType transactionType;
     private int amount;
     private Date date;

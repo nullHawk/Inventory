@@ -9,16 +9,18 @@ import java.util.List;
 @Getter
 @Entity
 public class Item {
-    @Id 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
     private int quantity;
     private double price;
-    @OneToOne
+
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "supplier_id")
     private Supplier supplier;
-    @OneToMany
+
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Transaction> transactions;
 
 

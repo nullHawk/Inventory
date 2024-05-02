@@ -2,7 +2,6 @@ package com.nullhawk.inventory.models;
 
 
 import java.util.Date;
-
 import com.nullhawk.inventory.enums.TransactionType;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -13,12 +12,12 @@ import lombok.Setter;
 @Setter
 public class Transaction {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @OneToOne
-    private Item item;
+    // @OneToOne
+    // private Item item;
     private TransactionType transactionType;
     private int amount;
     private Date date;
